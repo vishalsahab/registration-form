@@ -3,10 +3,9 @@ function validate() {
     let lastNameInput = document.getElementById('last-name').value
     let emailInput = document.getElementById('email').value
     let phoneInput = document.getElementById('phone').value
-    let batchInput = document.getElementById('batch').value
-    let moduleInput = document.getElementById('module').value
-    let tnCInput = document.getElementById('tnC').checked
-
+    let genderInput = document.getElementById('gender').value
+    let countryInput = document.getElementById('country').value
+    
     let error = false
 
     if(firstNameInput && firstNameInput.length >=3) {
@@ -53,30 +52,25 @@ function validate() {
         error = true;
     }
 
-    if(batchInput !== 'None'){
-		document.getElementById('batch-valid').style.display = "block";
-		document.getElementById('batch-invalid').style.display = "none";
+    if(genderInput !== 'None'){
+		document.getElementById('gender-valid').style.display = "block";
+		document.getElementById('gender-invalid').style.display = "none";
 	} else {
-		document.getElementById('batch-invalid').style.display = "block";
-		document.getElementById('batch-valid').style.display = "none";
+		document.getElementById('gender-invalid').style.display = "block";
+		document.getElementById('gender-valid').style.display = "none";
 		error = true
     }
     
-    if(moduleInput !== 'None'){
-		document.getElementById('module-valid').style.display = "block";
-		document.getElementById('module-invalid').style.display = "none";
+    if(countryInput !== 'None'){
+		document.getElementById('country-valid').style.display = "block";
+		document.getElementById('country-invalid').style.display = "none";
 	} else {
-		document.getElementById('module-invalid').style.display = "block";
-		document.getElementById('module-valid').style.display = "none";
+		document.getElementById('country-invalid').style.display = "block";
+		document.getElementById('country-valid').style.display = "none";
 		error = true
     }
     
-    if(tnCInput) {
-		document.getElementById("tnC-invalid").style.display = "none";
-	} else {
-		document.getElementById("tnC-invalid").style.display = "block";
-		error = true
-	}
+    
 
 	if(!error) {
 		alert('Your details have been saved successfully!')
@@ -84,16 +78,16 @@ function validate() {
 		document.getElementById('last-name').value = ''
 		document.getElementById('email').value = ''
 		document.getElementById('phone').value = ''
-		document.getElementById('batch').value = ''
-		document.getElementById('module').value = ''
-		document.getElementById('tnC').checked = false
+		document.getElementById('gender').value = ''
+		document.getElementById('country').value = ''
+		
 
 		document.getElementById('first-name-valid').style.display = 'none'
 		document.getElementById('last-name-valid').style.display = 'none'
 		document.getElementById("email-valid").style.display = "none"
 		document.getElementById("phone-valid").style.display = "none";
-		document.getElementById("batch-valid").style.display = "none";
-		document.getElementById('module-valid').style.display = "none";
+		document.getElementById("gender-valid").style.display = "none";
+		document.getElementById('country-valid').style.display = "none";
 	}
 
 }
